@@ -23,6 +23,14 @@ For feature engineering, we employed Mel-frequency cepstral coefficients (MFCCs)
 
 Speech signal recognition differs fundamentally from static image recognition due to its dynamic nature. In speech recognition, the analysis revolves around dynamic processes rather than fixed patterns, with recognizable speech represented by feature vectors rather than singular ones. Accents, influenced by numerous factors, can result in hybridizations, making it challenging to pinpoint a single accent type accurately. To address this complexity, recognizing accents at specific intervals, rather than across the entire audio signal, is favored. Each segment undergoes feature extraction, yielding 13 Mel-frequency cepstral coefficients (MFCCs). These coefficients form a two-dimensional vector input. Employing time intervals of 25 ms, corresponding to the duration of a phoneme [4][5], aids in spectrogram characterization and feature extraction accuracy.
 
+## Standard Scaling
+
+Standard scaling, also known as z-score normalization, was applied to the feature vectors extracted from the audio data. This preprocessing technique ensures that each feature (mfcc) has a mean of 0 and a standard deviation of 1, allowing for improved convergence and performance of machine learning algorithms.
+
+## Label Encoding
+
+Since our target variable consists of two labels, we employed label encoding to convert categorical labels into numerical format: 1 for english accent and 0 for arabic accent. 
+
 ## Model Building
 
 Our model building phase, implemented using TensorFlow and Keras, is currently underway. We plan to employ state-of-the-art Deep Learning architectures to train and evaluate the performance of our accent recognition model. Details on model architecture, training procedures, and evaluation metrics will be provided in subsequent updates.
